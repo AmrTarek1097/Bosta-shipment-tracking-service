@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import MenuIcon from '@mui/icons-material/Menu'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,17 +6,11 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 import Grid from '@mui/material/Grid';
 import SearchInput from './SearchInput';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 
-
-
-// const Home = i18next.t('Home', {joinArrays: ' ='})
-// const Pricing = i18next.t('Pricing', {joinArrays: "="})
-// const Sales = i18next.t('Contact Sales', {joinArrays: ' ='})
 
 
 
@@ -27,7 +21,7 @@ const navItem: string[] = ['Home', 'Pricing', "Contact Sales"];
 export default function Navbar({shipment}) {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [language, setLanguage] = React.useState<'en' | 'ar' | ''>('ar');
-    const [direction, setDirection] = React.useState<'rtl' | 'ltr' | ''>('');
+    
     const [display, setDisplay] = React.useState(false);
     const { t } = useTranslation();
 
@@ -38,17 +32,16 @@ export default function Navbar({shipment}) {
         i18next.changeLanguage(language)
         if (language === 'en') {
             setLanguage((ar)=> ar='ar')
-            setDirection((ltr)=> ltr='ltr')
+            
             if (document.querySelector("html") != null ) {
-                document.querySelector("html")?.setAttribute("lang", language) && 
-                document.querySelector("html")?.setAttribute("dir", direction)
+                document.querySelector("html")?.setAttribute("lang", language) 
+    
               }
         } else {
             setLanguage((en)=> en='en')
-            setDirection((rtl)=> rtl='rtl')
+            
           if (document.querySelector("html") != null ) {
-            document.querySelector("html")?.setAttribute("lang", language) && 
-            document.querySelector("html")?.setAttribute("dir", direction)
+            document.querySelector("html")?.setAttribute("lang", language) 
           }
         }
     }
@@ -233,7 +226,7 @@ export default function Navbar({shipment}) {
 
             </Toolbar>
         </Grid>
-        // </AppBar>
+        
 
     );
 }

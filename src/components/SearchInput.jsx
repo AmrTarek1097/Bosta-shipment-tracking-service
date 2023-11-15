@@ -1,39 +1,21 @@
 import { useTranslation } from "react-i18next";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { ShipmentContext } from "../Context/ShipmentNumStore.js";
 
 const SearchInput = () => {
-  // const [inputText, setInputText] = useState('')
-  const [valueIntered, setValueIntered] = useState("");
-  const [updated, setUpdated] = useState(valueIntered);
-
   let { getShipmentNum } = useContext(ShipmentContext);
 
   const { t } = useTranslation();
 
   const handleClick = (e) => {
     e.preventDefault();
-
-    // setValueIntered(e.target.trackingNumber.value)
-    // console.log(e.target.trackingNumber.value)
-    // setUpdated(valueIntered)
-    // getShipmentNum(e.target.trackingNumber.value)
-
     getShipmentNum(e.target.trackingNumber.value);
-    // console.log("click" + updated)
   };
-
-  // const handleChange = (e) => {
-  //   // Store the input value to local state
-  //   setValueIntered(e.target.value)
-  //   console.log(e.target.value)
-  // };
 
   return (
     <form onSubmit={handleClick} className="flex flex-row">
       <button
         type="submit"
-        // onClick={handleClick}
         className="input-group-text flex items-center whitespace-nowrap  px-3 py-1.5 text-center text-base font-normal dark:text-neutral-200 bg-red-600"
         id="basic-addon2"
       >
@@ -50,15 +32,13 @@ const SearchInput = () => {
           />
         </svg>
       </button>
-      {/* <div className="relative"> */}
+
       <input
-        // onChange={handleChange}
         type="text"
         id="trackingNumber"
         className="relative border border-gray-300 py-2 px-3 focus:outline-none focus:border-blue-500 "
         placeholder={t("Tracking number")}
       />
-      {/* </div> */}
     </form>
   );
 };

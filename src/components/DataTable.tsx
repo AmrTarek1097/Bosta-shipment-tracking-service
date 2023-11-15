@@ -8,7 +8,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import format from "date-fns/format";
 import { Status } from "../types";
-import { Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const steps = [
@@ -25,23 +24,17 @@ export default function DataTable({
 }) {
   const { t } = useTranslation();
 
-  /* transitEvents = transitEvents?.filter(
-    (transitEvent) =>
-      (transitEvent.hub ||
-        transitEvent.state === "DELIVERED" ||
-        transitEvent.state === "CANCELLED") &&
-      transitEvent
-  ); */
+
 
   let tempEvents = [
-    transitEvents?.find((te) => te.state == "TICKET_CREATED"),
-    transitEvents?.find((te) => te.state == "PACKAGE_RECEIVED"),
-    transitEvents?.find((te) => te.state == "OUT_FOR_DELIVERY"),
+    transitEvents?.find((te) => te.state === "TICKET_CREATED"),
+    transitEvents?.find((te) => te.state === "PACKAGE_RECEIVED"),
+    transitEvents?.find((te) => te.state === "OUT_FOR_DELIVERY"),
     transitEvents?.find(
       (te) =>
-        te.state == "DELIVERED_TO_SENDER" ||
-        te.state == "DELIVERED" ||
-        te.state == "CANCELLED"
+        te.state === "DELIVERED_TO_SENDER" ||
+        te.state === "DELIVERED" ||
+        te.state === "CANCELLED"
     ),
   ];
 
@@ -81,10 +74,7 @@ export default function DataTable({
                   format(new Date(transitEvent?.timestamp), "hh:mm a")}
               </TableCell>
 
-              {/* <TableCell className="table" align="center">
-                
-                {transitEvent?.state?.split('_').join(' ').toLowerCase()}
-              </TableCell> */}
+          
 
               <TableCell className="table" align="center">
                 {transitEvent?.state
@@ -95,7 +85,7 @@ export default function DataTable({
                 {transitEvent?.reason}
               </TableCell>
 
-              {/* {steps[3] ? <Typography >{transitEvent?.reason} </Typography> : ''} */}
+              
             </TableRow>
           ))}
         </TableBody>

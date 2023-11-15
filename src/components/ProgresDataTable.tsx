@@ -93,7 +93,7 @@ export default function ProgresDataTable({
         </div>
         <div className="border mx-12 py-8">
           <Grid item xs={12}>
-            {/* <CustomizedStepper currentStepId={currentStepId} /> */}
+           
             <Stepper
               currentStepId={currentStepId}
               message={messege}

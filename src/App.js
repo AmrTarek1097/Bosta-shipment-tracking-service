@@ -20,10 +20,10 @@ function App() {
 
   const [data, setData] = useState();
   let { shipment } = useContext(ShipmentContext);
-  // const [number, setNumber] = useState(shipment);
+ 
 
   useEffect(() => {
-    // setNumber(shipment)
+    
     const fetchData = async () => {
       const res = await getShipmentTrackingDetails(shipment);
       await setData(res);
@@ -48,9 +48,3 @@ function App() {
 }
 
 export default App;
-
-// Networking layer
-// fetch, axios, react-query
-
-// State management layer
-// redux, redux-toolkit
