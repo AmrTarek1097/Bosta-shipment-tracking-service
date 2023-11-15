@@ -15,7 +15,9 @@ const theme = createTheme({
 });
 
 function App() {
-  // const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+  document.body.dir = i18n.dir();
+
   const [data, setData] = useState();
   let { shipment } = useContext(ShipmentContext);
   // const [number, setNumber] = useState(shipment);

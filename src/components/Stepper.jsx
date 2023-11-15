@@ -128,7 +128,7 @@ export default function CustomizedSteppers({
 }) {
   const { t } = useTranslation();
   return (
-    <Stack sx={{ width: "100&" }} spacing={4}>
+    <Stack sx={{ width: "100&" }} spacing={4} className="eng">
       <Stepper
         className="nav-font"
         alternativeLabel
