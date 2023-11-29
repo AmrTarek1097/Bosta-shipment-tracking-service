@@ -6,4 +6,12 @@ In the project directory, you can run:
 
 ### `npm start`
 
+## Technologies and languages used:
+- JavaScript / TypeScript
+- Tailwind CSs
+- Material UI
+- React.js
+- Context hook
+- i18next 
+
 
