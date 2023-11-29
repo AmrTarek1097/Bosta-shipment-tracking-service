@@ -8,10 +8,10 @@ In the project directory, you can run:
 
 ## Technologies and languages used:
 - JavaScript / TypeScript
-- Tailwind CSs
+- Tailwind CSS
 - Material UI
 - React.js
-- Context hook
+- Context
 - i18next 
 
 
